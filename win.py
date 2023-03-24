@@ -1,5 +1,5 @@
-from pozicijos import judesiukai_x
 from pozicijos import judesiukai_0
+from pozicijos import judesiukai_x
 
 
 def win_x():

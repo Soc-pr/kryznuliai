@@ -1,16 +1,15 @@
 from tabulate import tabulate
-from win import win_x, win_0
+
 from pozicijos import (judesiukai_x,
                        judesiukai_0,
                        judesiukai)
+from win import win_x, win_0
 
 lentele = [["-", "-", "-"],
            ["-", "-", "-"],
            ["-", "-", "-"]]
 
 print(tabulate(lentele, tablefmt="fancy_grid"))
-
-# judesiukai = set()
 
 while True:
     x_move = int(input("Padekite X: "))
@@ -54,12 +53,16 @@ while True:
         for skaicius in lentele:
             del lentele[2][2]
             lentele[2].insert(2, "X")
+
     judesiukai_x.add(x_move)
     judesiukai.add(x_move)
 
     print(tabulate(lentele, tablefmt="fancy_grid"))
     win_x()
 
+    if len(judesiukai_x) >= 5:
+        print("Niekas nelaimėjo, lygiosios.")
+        exit()
 
     _0_move = int(input("Padekite 0: "))
     for sk0 in judesiukai:
@@ -104,16 +107,7 @@ while True:
             lentele[2].insert(2, "0")
     judesiukai_0.add(_0_move)
     judesiukai.add(_0_move)
+
     win_0()
 
-    print("x", judesiukai_x)
-    print("0", judesiukai_0)
-    print("bendras", judesiukai)
     print(tabulate(lentele, tablefmt="fancy_grid"))
-
-
-
-
-
-
-
