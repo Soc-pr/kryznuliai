@@ -108,6 +108,6 @@ while True:
     judesiukai_0.add(_0_move)
     judesiukai.add(_0_move)
 
+    print(tabulate(lentele, tablefmt="fancy_grid"))
     win_0()
 
-    print(tabulate(lentele, tablefmt="fancy_grid"))
